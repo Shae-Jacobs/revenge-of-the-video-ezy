@@ -18,6 +18,11 @@ button {
   border: none;
   border-radius: 0.3rem;
   font-weight: 600;
+
+  &:hover{
+    color: black;
+    background-color: rgb(194, 194, 194);
+  }
 }
 
 .header-container {
