@@ -4,3 +4,9 @@ html,
 body {
   font-family: 'Montserrat', sans-serif;
 }
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 2rem;
+}
