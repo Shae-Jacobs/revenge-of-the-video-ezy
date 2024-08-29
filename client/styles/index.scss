@@ -3,6 +3,21 @@
 html, 
 body {
   font-family: 'Montserrat', sans-serif;
+  background-color: rgb(245, 245, 245);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  color: white;
+  background-color: rgb(90, 90, 90);
+  padding: 0.5rem 2rem;
+  border: none;
+  border-radius: 0.3rem;
+  font-weight: 600;
 }
 
 .header-container {
@@ -10,3 +25,31 @@ body {
   justify-content: space-between;
   padding-right: 2rem;
 }
+
+.movie-container {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.movie-tile {
+  background-color: white;
+  padding: 1rem;
+  border: 1px solid grey;
+  border-radius: 0.5rem;
+  box-shadow: 0 6px 6px hsla(0, 0%, 54%, 0.3);
+  transition: transform 0.3s;
+  
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  & img {
+    border-radius: 0.5rem;
+    max-height: 400px;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
