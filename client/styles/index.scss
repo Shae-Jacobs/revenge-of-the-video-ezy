@@ -44,10 +44,10 @@ button {
   &:hover {
     transform: scale(1.05);
   }
-
+  
   & img {
     border-radius: 0.5rem;
-    max-height: 400px;
+    max-height: 25vw;
     width: 100%;
     object-fit: cover;
   }
