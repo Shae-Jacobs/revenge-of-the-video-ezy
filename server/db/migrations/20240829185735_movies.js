@@ -8,6 +8,7 @@ export function up(knex) {
     table.string('title')
     table.integer('year')
     table.string('genre')
+    table.string('poster_url')
   })
 }
 
