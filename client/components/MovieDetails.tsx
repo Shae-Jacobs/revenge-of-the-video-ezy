@@ -5,15 +5,14 @@ import useReviews from '../hooks/useReviews'
 function MovieDetails() {
   const { id } = useParams()
   const movie = useMovieById(String(id))
-  const review = useReviews(String(id))
-  if (movie.isPending) {
+  const review = useReviews()
+  if (movie.isPending || review.isPending) {
     return <p>Loading...</p>
   }
 
-  if (movie.isError) {
+  if (movie.isError || review.isError) {
     return <p>An error occurred loading movies...</p>
   }
-  console.log(review.data)
   return (
     <>
       <div className="two-columns">
