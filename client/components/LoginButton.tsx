@@ -4,17 +4,10 @@ import { IfAuthenticated, IfNotAuthenticated } from './Authenticated'
 export const LoginButton = () => {
   const { loginWithRedirect, logout } = useAuth0()
 
-  // isAuthenticated (
-  //   <button onClick={
-
-  //LOGOUT - In handleSignOut we'll call logout
   const handleSignOut = () => {
-    //console.log('sign out')
     logout()
   }
-  //LOGINWITHREDIRECT - In handleSignIn, we'll call loginWithRedirect
   const handleSignIn = () => {
-    //console.log('sign in')
     loginWithRedirect()
   }
 
