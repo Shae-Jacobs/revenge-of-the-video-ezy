@@ -13,6 +13,7 @@ function MovieDetails() {
   if (movie.isError || review.isError) {
     return <p>An error occurred loading movies...</p>
   }
+
   return (
     <>
       <div className="two-columns">
