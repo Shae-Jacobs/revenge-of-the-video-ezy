@@ -36,7 +36,7 @@ router.get('/:id', async (req, res) => {
 
 // Create a new review
 router.post('/', async (req, res) => {
-  const { movie_id, review_text, movie_rating, reviewer_name } = req.body
+  const { movieId: movie_id, reviewText: review_text, movieRating: movie_rating, reviewerName: reviewer_name } = req.body
   try {
     const review = await createReview(
       movie_id,

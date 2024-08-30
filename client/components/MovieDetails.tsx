@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { useMovieById } from '../hooks/useMovieById'
 import useReviews from '../hooks/useReviews'
 
@@ -36,6 +36,10 @@ function MovieDetails() {
               </div>
             </>
           ))}
+          {
+            !review.data[0] && <p>No reviews yet</p>
+          }
+          <Link to={`/movies/${id}/review`}><button>Add review</button></Link>
         </div>
       </div>
     </>
