@@ -38,8 +38,17 @@ export const getAllReviews = async () => {
   return connection('reviews').select('*')
 }
 
-export const getReviewById = async (id: number) => {
-  return connection('reviews').where({ id }).first()
+export const getReviewByMovieId = async (movie_id: number) => {
+  return connection('reviews')
+    .join('movies', 'reviews.movie_id', 'movies.id')
+    .select(
+      'reviews.id as id',
+      'reviews.movie_id as movie_id',
+      'reviews.review_text as review_text',
+      'reviews.movie_rating as movie_rating',
+      'reviews.reviewer_name as reviewer_name',
+    )
+    .where({ movie_id })
 }
 
 export const createReview = async (

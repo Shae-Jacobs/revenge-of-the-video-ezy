@@ -1,7 +1,7 @@
 import { Router } from 'express'
 import {
   getAllReviews,
-  getReviewById,
+  getReviewByMovieId,
   createReview,
   updateReview,
   deleteReview,
@@ -23,7 +23,7 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
   const { id } = req.params
   try {
-    const review = await getReviewById(Number(id))
+    const review = await getReviewByMovieId(Number(id))
     if (review) {
       res.json(review)
     } else {
