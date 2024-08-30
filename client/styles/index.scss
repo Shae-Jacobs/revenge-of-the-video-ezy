@@ -58,3 +58,12 @@ button {
   }
 }
 
+.two-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.movie-poster {
+  max-width: 100%;
+  height: auto  
+}

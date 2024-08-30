@@ -43,10 +43,10 @@ export const getReviewByMovieId = async (movie_id: number) => {
     .join('movies', 'reviews.movie_id', 'movies.id')
     .select(
       'reviews.id as id',
-      'reviews.movie_id as movie_id',
-      'reviews.review_text as review_text',
-      'reviews.movie_rating as movie_rating',
-      'reviews.reviewer_name as reviewer_name',
+      'reviews.movie_id as movieId',
+      'reviews.review_text as reviewText',
+      'reviews.movie_rating as movieRating',
+      'reviews.reviewer_name as reviewerName',
     )
     .where({ movie_id })
 }

@@ -1,3 +1,4 @@
+import { Movie } from "../../models/movies.ts"
 import useMovies from "../hooks/useMovies.ts"
 import { Link } from "react-router-dom"
 
@@ -18,7 +19,7 @@ function Movies() {
     <h2>Movies</h2>
     <div className="movie-container">
     {
-      movies.data.map((movie) => 
+      movies.data.map((movie: Movie) => 
       <>
       <Link to={`/movies/${movie.id}`}>
       <div key={movie.id} className="movie-tile">

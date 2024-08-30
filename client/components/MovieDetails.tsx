@@ -1,8 +1,43 @@
+import { useParams } from 'react-router-dom'
+import { useMovieById } from '../hooks/useMovieById'
+import useReviews from '../hooks/useReviews'
+
 function MovieDetails() {
+  const { id } = useParams()
+  const movie = useMovieById(String(id))
+  const review = useReviews(String(id))
+  if (movie.isPending || review.isPending) {
+    return <p>Loading...</p>
+  }
+
+  if (movie.isError || review.isError) {
+    return <p>An error occurred loading movies...</p>
+  }
 
   return (
     <>
-    <h2>Movie Details</h2>
+      <div className="two-columns">
+        <div>
+          <h2>{`${movie.data.title} (${movie.data.year})`}</h2>
+          <p>{`${movie.data.genre}`}</p>
+          <img
+            src=""
+            alt={`Poster for ${movie.data.title}`}
+            className="movie-poster"
+          />
+        </div>
+        <div>
+          {review.data.map((review) => (
+            <>
+              <div key={review.id}>
+                <h2>{`Reviewed By: ${review.reviewerName}`}</h2>
+                <h3>{`Rating: ${review.movieRating}/5`}</h3>
+                <p>{`Review: ${review.reviewText}`}</p>
+              </div>
+            </>
+          ))}
+        </div>
+      </div>
     </>
   )
 }
