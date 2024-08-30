@@ -21,7 +21,7 @@ function MovieDetails() {
           <h2>{`${movie.data.title} (${movie.data.year})`}</h2>
           <p>{`${movie.data.genre}`}</p>
           <img
-            src=""
+            src={`${movie.data.posterUrl}`}
             alt={`Poster for ${movie.data.title}`}
             className="movie-poster"
           />

@@ -2,11 +2,20 @@ import connection from './connection.ts'
 
 // Movies functions
 export const getAllMovies = async () => {
-  return connection('movies').select()
+  return connection('movies').select(
+    'id',
+    'title',
+    'year',
+    'genre',
+    'poster_url as posterUrl',
+  )
 }
 
 export const getMovieById = async (id: number) => {
-  return connection('movies').where({ id }).first()
+  return connection('movies')
+    .select('id', 'title', 'year', 'genre', 'poster_url as posterUrl')
+    .where({ id })
+    .first()
 }
 
 export const createMovie = async (
@@ -42,6 +51,10 @@ export const getReviewByMovieId = async (movie_id: number) => {
   return connection('reviews')
     .join('movies', 'reviews.movie_id', 'movies.id')
     .select(
+      'movies.title',
+      'movies.year',
+      'movies.genre',
+      'movies.poster_url as posterUrl',
       'reviews.id as id',
       'reviews.movie_id as movieId',
       'reviews.review_text as reviewText',
