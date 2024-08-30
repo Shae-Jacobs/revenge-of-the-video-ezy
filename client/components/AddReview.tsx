@@ -30,6 +30,14 @@ function AddReview() {
     }))
   }
 
+  const onRadioChange = (evt: ChangeEvent<HTMLInputElement>) => {
+    const rating = Number(evt.currentTarget.value)
+    setFormValues((previous) => ({
+      ...previous,
+      movieRating: rating
+    }))      
+  }
+
   return (
     <>
     <h2>Review Form</h2>
@@ -53,6 +61,21 @@ function AddReview() {
           value={formValues.reviewText}
           onChange={onChange}
         />
+      </div>
+      <div>
+        <fieldset>
+          <legend>Rate this movie</legend>
+          <label htmlFor="1">1</label>
+          <input id="1" type="radio" name="rating" value={1} onChange={onRadioChange}/>
+          <label htmlFor="2">2</label>
+          <input id="2" type="radio" name="rating" value={2} onChange={onRadioChange}/>
+          <label htmlFor="3">3</label>
+          <input id="3" type="radio" name="rating" value={3} onChange={onRadioChange}/>
+          <label htmlFor="4">4</label>
+          <input id="4" type="radio" name="rating" value={4} onChange={onRadioChange}/>
+          <label htmlFor="5">5</label>
+          <input id="5" type="radio" name="rating" value={5} onChange={onRadioChange}/>
+        </fieldset>
       </div>
       
       <button type="submit" className="button">Add Review</button>
