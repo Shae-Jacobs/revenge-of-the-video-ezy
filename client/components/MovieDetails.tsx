@@ -5,7 +5,7 @@ import useReviews from '../hooks/useReviews'
 function MovieDetails() {
   const { id } = useParams()
   const movie = useMovieById(String(id))
-  const review = useReviews()
+  const review = useReviews(String(id))
   if (movie.isPending || review.isPending) {
     return <p>Loading...</p>
   }
@@ -27,24 +27,15 @@ function MovieDetails() {
           />
         </div>
         <div>
-          <h2>Review 1</h2>
-          <p>
-            Big old review text.Big old review textBig old review textBig old
-            review textBig old review textBig old review textBig old review
-            textBig old review text
-          </p>
-          <h2>Review 2</h2>
-          <p>
-            Big old review text.Big old review textBig old review textBig old
-            review textBig old review textBig old review textBig old review
-            textBig old review text
-          </p>
-          <h2>Review 3</h2>
-          <p>
-            Big old review text.Big old review textBig old review textBig old
-            review textBig old review textBig old review textBig old review
-            textBig old review text
-          </p>
+          {review.data.map((review) => (
+            <>
+              <div key={review.id}>
+                <h2>{`Reviewed By: ${review.reviewerName}`}</h2>
+                <h3>{`Rating: ${review.movieRating}/5`}</h3>
+                <p>{`Review: ${review.reviewText}`}</p>
+              </div>
+            </>
+          ))}
         </div>
       </div>
     </>

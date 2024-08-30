@@ -11,7 +11,7 @@ export async function getMoviesById(id: string) {
   return res.body as Movie
 }
 
-export async function getAllReviews() {
-  const res = await request.get('/api/v1/reviews')
+export async function getReviews(movieId: string) {
+  const res = await request.get(`/api/v1/reviews/${movieId}`)
   return res.body as Review[]
 }

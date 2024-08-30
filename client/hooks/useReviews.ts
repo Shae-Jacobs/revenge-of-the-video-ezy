@@ -1,27 +1,10 @@
 import { useQuery } from '@tanstack/react-query'
-import { getAllReviews } from '../apis/movies'
+import { getReviews } from '../apis/movies'
 
-// export default function useReviews(movieId: string) {
-//   const query = useQuery({
-//     queryKey: ['reviews'],
-//     queryFn: getAllReviews,
-//   })
-
-//   const reviews = query.data?.filter(
-//     (review) => review.movieId == Number(movieId),
-//   )
-
-//   return {
-//     isPending: query.isPending,
-//     isError: query.isError,
-//     error: query.error,
-//     data: reviews,
-//   }
-// }
-export default function useReviews() {
+export default function useReviews(moiveId: string) {
   const query = useQuery({
     queryKey: ['reviews'],
-    queryFn: getAllReviews,
+    queryFn: () => getReviews(moiveId),
   })
   return query
 }
