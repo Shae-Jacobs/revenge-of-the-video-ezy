@@ -67,3 +67,18 @@ button {
   max-width: 100%;
   height: auto  
 }
+
+.form input {
+  margin: 0.5rem;
+  padding: 0.5rem
+}
+
+fieldset {
+  border: 1px solid grey;
+  border-radius: 0.5rem
+}
+
+#reviewText {
+  // height: 10rem;
+  width: 80%;
+}

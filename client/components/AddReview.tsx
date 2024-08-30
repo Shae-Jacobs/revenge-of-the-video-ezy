@@ -43,6 +43,22 @@ function AddReview() {
     <h2>Review Form</h2>
     <form className="form" onSubmit={onSubmit}>
       <div>
+        <fieldset>
+          <legend>Rate this movie</legend>
+          <label htmlFor="1">1</label>
+          <input id="1" type="radio" name="rating" value={1} onChange={onRadioChange}/>
+          <label htmlFor="2">2</label>
+          <input id="2" type="radio" name="rating" value={2} onChange={onRadioChange}/>
+          <label htmlFor="3">3</label>
+          <input id="3" type="radio" name="rating" value={3} onChange={onRadioChange}/>
+          <label htmlFor="4">4</label>
+          <input id="4" type="radio" name="rating" value={4} onChange={onRadioChange}/>
+          <label htmlFor="5">5</label>
+          <input id="5" type="radio" name="rating" value={5} onChange={onRadioChange}/>
+        </fieldset>
+      </div>
+      <br></br>
+      <div>
         <label htmlFor="reviewerName">Name: </label>
         <input 
           type="text"
@@ -62,22 +78,7 @@ function AddReview() {
           onChange={onChange}
         />
       </div>
-      <div>
-        <fieldset>
-          <legend>Rate this movie</legend>
-          <label htmlFor="1">1</label>
-          <input id="1" type="radio" name="rating" value={1} onChange={onRadioChange}/>
-          <label htmlFor="2">2</label>
-          <input id="2" type="radio" name="rating" value={2} onChange={onRadioChange}/>
-          <label htmlFor="3">3</label>
-          <input id="3" type="radio" name="rating" value={3} onChange={onRadioChange}/>
-          <label htmlFor="4">4</label>
-          <input id="4" type="radio" name="rating" value={4} onChange={onRadioChange}/>
-          <label htmlFor="5">5</label>
-          <input id="5" type="radio" name="rating" value={5} onChange={onRadioChange}/>
-        </fieldset>
-      </div>
-      
+      <br></br>
       <button type="submit" className="button">Add Review</button>
     </form>
 
