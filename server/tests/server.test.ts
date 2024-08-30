@@ -24,6 +24,7 @@ const exampleMovie = {
   id: 2,
   title: 'Mad Max',
   year: 1979,
+  posterUrl: "/images/MadMax.jpg",
   genre: 'Action/Sci-Fi',
 }
 
